@@ -1,0 +1,7 @@
+use grid for main layout(-navigation,main, aside, footer)
+--main use grid (--2 components(--1 column, --2 rows (--1fr,--1fr)))
+--main second row (--flexbox)
+--navigation( --logo(--image), --nav( use unordered list(--link))
+--asid use flexbox (--in colums --title h1, -- news-heading(--h2), --text(--p)
+--footer use grid(--3 column, --1 row)
+--footer components(--2 column, (--image, --text(--number h1, --title h2, --text p)))

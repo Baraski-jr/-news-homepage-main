@@ -1,0 +1,228 @@
+/* Start at 9:48 */
+/* Finish at 11:49 */
+:root {
+    --accent-100: hsl(35, 77%, 62%);
+    --accent-200:  hsl(5, 85%, 63%);
+    --clr-100: hsl(36, 100%, 99%);
+    --clr-200: hsl(233, 8%, 79%);
+    --clr-300: hsl(236, 13%, 42%);
+    --clr-400: hsl(240, 100%, 5%);
+
+    /* Fonts */
+    --font-family: "Inter", sans-serif;
+    --font-size: 15px;
+    --font-w-400: 400;
+    --font-w-700: 700;
+    --font-w-800: 800;  
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+img {
+    max-width: 100%;
+    height: 100%;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--clr-400);
+}
+header, section {
+    width: min(70em, 90%);
+    margin: auto;
+}
+
+/* Hover Effect */
+.primary-navigation li a:hover,
+.review-title:hover {
+    cursor: pointer;
+    color: var(--accent-200);
+    transition: color .3s;
+}
+.mini-title:hover {
+    cursor: pointer;
+    color: var(--accent-100);
+    transition: color .3s;
+}
+
+body {
+    padding-block: 2em;
+    overflow-x: hidden;
+    display: grid;
+    gap: 2.5em;
+}
+.primary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.logo {
+    cursor: pointer;
+}
+.navigation-toggle {
+    z-index: 9999;
+}
+.primary-header__inner {
+    position: absolute;
+    right: -5.5em;
+    width: 0vw;
+    height: 100vh;
+    padding: 10em 2em;
+    background-color: #fff;
+    top: 0em;
+    transition: width .5s;
+}
+.primary-header__inner.open {
+    width: 90vw;
+}
+.primary-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;   
+}
+.primary-navigation li a {
+    color: var(--clr-300);
+}
+/* Navigation End */
+
+.main-display {
+    display: grid;
+    gap: 2em;
+}
+main {
+    display: grid;
+    gap: 1em;
+}
+.big-title {
+    font-size: clamp(3em, 5vw,4em);
+    line-height: 1;
+}
+.main-text-right {   
+    padding-block: 1.5em;
+}
+.text {
+    color: var(--clr-300);
+    font-size: var(--font-size);
+    font-weight: var(--font-w-400);
+    line-height: 1.6;
+}
+.read-more {
+    margin-top: 1.5em;
+    border: none;
+    padding: 1em;
+    /* width: calc(100% - 12em); */
+    width: 12em;
+    background-color: var(--accent-200);
+    color: var(--clr-100);
+    font-size: 1em;
+    text-transform: uppercase;
+}
+.read-more:hover {
+    color: var(--clr-100);
+    background-color: var(--clr-400);
+    transition: all .3s;
+}
+/* Main End */
+
+aside {
+    padding: 1.5em 1em 0;
+    background-color: var(--clr-400);
+}
+.aside.main-title {
+    color: var(--accent-100);
+    font-size: 2.5em;
+    margin-bottom: .2em;
+}
+.mini-title {
+    color: var(--clr-100);
+    margin-bottom: .5em;
+} 
+.news-block {
+    border-bottom: 1px solid var(--clr-300);
+    padding-block: 1.5em;
+}
+.news-block:last-child {
+    border-bottom: none;
+}
+/* .aside.text {
+    color: var(--clr-200);
+} */
+/* Aside End */
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.review-component {
+    display: flex;
+    gap: 1em;
+}
+figcaption {
+    display: grid;
+}
+.review-title {
+    color: var(--clr-400);
+}
+.review-number {
+    color: var(--clr-200);
+}
+/* Review of end */
+
+/* Large Screens */
+@media screen and (min-width: 778px) {
+    body {
+        display: grid;
+        gap: 2.5em;
+    }
+    /* Navigation */
+    .navigation-toggle {
+        display: none;
+    }
+    .primary-header__inner {
+        position: relative;
+        right: 0;
+        width: auto;
+        height: auto;
+        padding: 0;
+        display: flex;
+
+    }
+    ul.primary-navigation {
+        flex-direction: row;
+    }
+    /* Navigation End */
+    
+    
+    .main-display {
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        /* gap: 1em; */
+    }
+    article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+    .big-title {
+        margin-top: .5em;
+        font-size: 2.7em;
+        line-height: 1.2;
+    }
+    /* Main end */
+    .review {
+        /* border: 2px solid red; */
+        flex-direction: row;
+        gap: 1.5em;
+    }
+    /* Review end */
+
+}
